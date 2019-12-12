@@ -9,7 +9,7 @@ def main():
     elif len(argv) == 2:
         print(':')
     else:
-        print('s')
+        print('s:')
     for i in range(1, len(argv)):
         print('{}: {}'.format(i, argv[i]))
 
