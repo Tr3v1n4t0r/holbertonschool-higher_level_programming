@@ -9,7 +9,10 @@ def safe_print_list_integers(my_list=[], x=0):
                 b += 1
             except:
                 a += 1
-        print()
+        if a == b:
+            print()
     except:
         print()
+    if a > b:
+        return IndexError
     return b
