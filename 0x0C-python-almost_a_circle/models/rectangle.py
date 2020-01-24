@@ -27,6 +27,11 @@ class Rectangle(Base):
         """Returns the area value of the rectangle instance"""
         return self.__width * self.__height
 
+    def display(self):
+        """Prints the Rectangle instance to the stdout"""
+        print('\n' * self.__y + (' ' * self.__x + '#' * self.__width + '\n') *
+              self.__height, end='')
+
     @property
     def width(self):
         """Gets the width"""
