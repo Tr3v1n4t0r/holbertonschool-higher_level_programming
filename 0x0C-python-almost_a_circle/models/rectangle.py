@@ -2,6 +2,7 @@
 """
 Define a Rectangle class
 """
+from models.base import Base
 
 class Rectangle(Base):
     """Defines class Rectangle"""
