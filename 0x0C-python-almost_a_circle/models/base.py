@@ -40,3 +40,13 @@ class Base:
             dictionary = [obj.to_dictionary() for obj in list_objs]
         with open(filename, 'w') as f:
             f.write(cls.to_json_string(dictionary))
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Returns an instance with all attributes already set"""
+        if cls.__name__ == 'Rectangle':
+            new_base = cls(1, 1)
+        else:
+            new_base = cls(1)
+        cls.update(new_base, **dictionary)
+        return new_base
