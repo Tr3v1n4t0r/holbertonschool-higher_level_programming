@@ -56,8 +56,44 @@ class Base:
     def load_from_file(cls):
         """Returns a list of instances"""
         filename = cls.__name__ + '.json'
+
         if path.isfile(filename):
             with open(filename, 'r') as f:
                 my_list = cls.from_json_string(f.read())
             return [cls.create(**obj) for obj in my_list]
         return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ Serializes in CSV"""
+        filename = cls.__name__ + '.csv'
+
+        if list_objs is not None:
+            if cls.__name__ == 'Rectangle':
+                data = [[obj.id, obj.width, obj.height, obj.x, obj.y]
+                        for obj in list_objs]
+            else:
+                data = [[obj.id, obj.size, obj.x, obj.y] for obj in list_objs]
+            with open(filename, 'w', newline='') as f:
+                write = csv.writer(f)
+                write.writerows(data)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Deserializes in CSV"""
+        filename = cls.__name__ + '.csv'
+        dictionary = []
+
+        if path.isfile(filename):
+            with open(filename, 'r') as f:
+                read = csv.reader(f)
+                for row in read:
+                    if cls.__name__ == 'Rectangle':
+                        data = {'id': int(row[0]), 'width': int(row[1]),
+                                'height': int(row[2]), 'x': int(row[3]),
+                                'y': int(row[4])}
+                    else:
+                        data = {'id': int(row[0]), 'size': int(row[1]),
+                                'x': int(row[2]), 'y': int(row[3])}
+                    dictionary.append(cls.create(**data))
+        return dictionary
