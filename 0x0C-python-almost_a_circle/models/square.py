@@ -19,7 +19,13 @@ class Square(Rectangle):
                 '/' + str(self._Rectangle__y) + ' - ' +
                 str(self._Rectangle__width))
 
+    def to_dictionary(self):
+        """Returns a dictionary representation of Square"""
+        return {'id': self.id, 'size': self.size, 'x': self._Rectangle__x,
+                'y': self._Rectangle__y}
+
     def update(self, *args, **kwargs):
+        """Updates the Squares id, size, x, and y"""
         if args:
             if len(args) >= 1:
                 self.id = args[0]
@@ -35,7 +41,7 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         """Returns the dictionary representation of a Square"""
-        return {'id': self.id, 'size': self.__size, 'x': self._Rectangle__x,
+        return {'id': self.id, 'size': self.size, 'x': self._Rectangle__x,
                 'y': self._Rectangle__y}
 
     @property
