@@ -9,6 +9,7 @@ from models.rectangle import Rectangle
 from models.square import Square
 from io import StringIO
 
+
 class TestClassBase(unittest.TestCase):
     """Test the Base class"""
 
@@ -62,6 +63,7 @@ class TestClassBase(unittest.TestCase):
                                               "height": 3, "y": 2}])))
         self.assertTrue(type(json), dict)
         self.assertTrue(type(json) is str)
+
 
 if __name__ == '__main__':
     unittest.main()

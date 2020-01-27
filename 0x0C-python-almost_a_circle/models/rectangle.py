@@ -4,6 +4,7 @@ Define a Rectangle class
 """
 from models.base import Base
 
+
 class Rectangle(Base):
     """Defines class Rectangle"""
 
@@ -53,13 +54,13 @@ class Rectangle(Base):
             if len(args) >= 5:
                 self.__y = args[4]
         elif kwargs:
-                for key, value in kwargs.items():
-                    setattr(self, key, value)
+            for key, value in kwargs.items():
+                setattr(self, key, value)
 
     def to_dictionary(self):
         """Returns the dictionary representation of a Rectangle"""
-        return {'id': self.id, 'width': self.__width, 'height': self._height,
-                'x': self.__x, 'y':self.__y}
+        return {'id': self.id, 'width': self.__width, 'height': self.__height,
+                'x': self.__x, 'y': self.__y}
 
     @property
     def width(self):

@@ -5,6 +5,7 @@ Define a Square class
 from models.base import Base
 from models.rectangle import Rectangle
 
+
 class Square(Rectangle):
     """Defines class Square"""
 
@@ -35,7 +36,7 @@ class Square(Rectangle):
     def to_dictionary(self):
         """Returns the dictionary representation of a Square"""
         return {'id': self.id, 'size': self.__size, 'x': self._Rectangle__x,
-                'y':self._Rectangle__y}
+                'y': self._Rectangle__y}
 
     @property
     def size(self):

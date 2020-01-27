@@ -6,16 +6,18 @@ import json
 import csv
 from os import path
 
+
 class Base:
     """Defines class Base"""
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """Initializes a Base instance"""
         if id is not None:
-            self.__id = id
+            self.id = id
         else:
             Base.__nb_objects += 1
-            self.__id = Base.__nb_objects
+            self.id = Base.__nb_objects
 
     @staticmethod
     def to_json_string(list_dictionaries):
@@ -34,7 +36,6 @@ class Base:
     @staticmethod
     def draw(list_rectangles, list_squares):
         """Opens a window and draws all the Rectangles and Squares"""
-        
 
     @classmethod
     def save_to_file(cls, list_objs):
