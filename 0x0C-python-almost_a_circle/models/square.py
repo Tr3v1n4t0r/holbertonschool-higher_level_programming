@@ -15,7 +15,7 @@ class Square(Rectangle):
 
     def __str__(self):
         """Prints Square attributes"""
-        return ('[Square] (' + str(self.id) + ')' + str(self._Rectangle__x) +
+        return ('[Square] (' + str(self.id) + ') ' + str(self._Rectangle__x) +
                 '/' + str(self._Rectangle__y) + ' - ' +
                 str(self._Rectangle__width))
 
