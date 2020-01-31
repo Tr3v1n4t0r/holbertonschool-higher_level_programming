@@ -1,0 +1,88 @@
+The ``7-base_geometry`` module
+--------------------------------
+
+Using ``integer_validator``
+______________________________
+
+This is a text file in reStructured Text format. First import ``integer_validator`` from the ``7-base_geometry`` module:
+
+     >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Now use it:
+
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("my_int", 15)
+
+    >>> bg.integer_validator("size", 53)
+
+    >>> bg.integer_validator("", 33)
+
+    >>> bg.area()
+    Traceback (most recent call last):
+        ...
+    Exception: area() is not implemented
+
+    >>> bg.integer_validator("hello", "bob")
+    Traceback (most recent call last):
+        ...
+    Exception: hello must be an integer
+
+    >>> bg.integer_validator("value", 0)
+    Traceback (most recent call last):
+        ...
+    Exception: value must be greater than 0
+
+    >>> bg.integer_validator("change", -3)
+    Traceback (most recent call last):
+        ...
+    Exception: change must be greater than 0
+
+    >>> bg.integer_validator("float", float('8.3'))
+    Traceback (most recent call last):
+        ...
+    Exception: float must be an integer
+
+    >>> bg.integer_validator("nan", float('nan'))
+    Traceback (most recent call last):
+        ...
+    Exception: nan must be an integer
+
+    >>> bg.integer_validator("inf", float('inf'))
+    Traceback (most recent call last):
+        ...
+    Exception: inf must be an integer
+
+    >>> bg.integer_validator("list", [1, 2, 3])
+    Traceback (most recent call last):
+        ...
+    Exception: list must be an integer
+
+    >>> bg.integer_validator("tuple", (1, 2, 3))
+    Traceback (most recent call last):
+        ...
+    Exception: tuple must be an integer
+
+    >>> bg.integer_validator("bool", True)
+    Traceback (most recent call last):
+        ...
+    Exception: bool must be an integer
+
+    >>> bg.integer_validator("set", {1, 2})
+    Traceback (most recent call last):
+        ...
+    Exception: set must be an integer
+
+    >>> bg.integer_validator("None", None)
+    Traceback (most recent call last):
+        ...
+    Exception: None must be an integer
+
+    >>> bg.integer_validator()
+    Traceback (most recent call last):
+        ...
+    Exception: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+    >>> bg.integer_validator("name")
+    Traceback (most recent call last):
+        ...
+    Exception: integer_validator() missing 1 required positional argument: 'value'
