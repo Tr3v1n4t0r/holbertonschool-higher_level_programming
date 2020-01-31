@@ -19,15 +19,15 @@ How to use:
     ['a']
 
     >>> str_list = MyList('str')
-    >>>str_list.print_sorted()
+    >>> str_list.print_sorted()
     ['r', 's', 't']
 
-    >>>my_list.append(8)
-    >>>my_list.append(4)
-    >>>my_list.append(7)
-    >>>my_list.append(1)
-    >>>my_list.append(3)
-    >>>my_list.print_sorted()
+    >>> my_list.append(8)
+    >>> my_list.append(4)
+    >>> my_list.append(7)
+    >>> my_list.append(1)
+    >>> my_list.append(3)
+    >>> my_list.print_sorted()
     [1, 3, 4, 7, 8]
 
     >>> print(my_list)
