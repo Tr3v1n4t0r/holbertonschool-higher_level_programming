@@ -25,64 +25,64 @@ Now use it:
     >>> bg.integer_validator("hello", "bob")
     Traceback (most recent call last):
         ...
-    Exception: hello must be an integer
+    TypeError: hello must be an integer
 
     >>> bg.integer_validator("value", 0)
     Traceback (most recent call last):
         ...
-    Exception: value must be greater than 0
+    ValueError: value must be greater than 0
 
     >>> bg.integer_validator("change", -3)
     Traceback (most recent call last):
         ...
-    Exception: change must be greater than 0
+    ValueError: change must be greater than 0
 
     >>> bg.integer_validator("float", float('8.3'))
     Traceback (most recent call last):
         ...
-    Exception: float must be an integer
+    TypeError: float must be an integer
 
     >>> bg.integer_validator("nan", float('nan'))
     Traceback (most recent call last):
         ...
-    Exception: nan must be an integer
+    TypeError: nan must be an integer
 
     >>> bg.integer_validator("inf", float('inf'))
     Traceback (most recent call last):
         ...
-    Exception: inf must be an integer
+    TypeError: inf must be an integer
 
     >>> bg.integer_validator("list", [1, 2, 3])
     Traceback (most recent call last):
         ...
-    Exception: list must be an integer
+    TypeError: list must be an integer
 
     >>> bg.integer_validator("tuple", (1, 2, 3))
     Traceback (most recent call last):
         ...
-    Exception: tuple must be an integer
+    TypeError: tuple must be an integer
 
     >>> bg.integer_validator("bool", True)
     Traceback (most recent call last):
         ...
-    Exception: bool must be an integer
+    TypeError: bool must be an integer
 
     >>> bg.integer_validator("set", {1, 2})
     Traceback (most recent call last):
         ...
-    Exception: set must be an integer
+    TypeError: set must be an integer
 
     >>> bg.integer_validator("None", None)
     Traceback (most recent call last):
         ...
-    Exception: None must be an integer
+    TypeError: None must be an integer
 
     >>> bg.integer_validator()
     Traceback (most recent call last):
         ...
-    Exception: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
     >>> bg.integer_validator("name")
     Traceback (most recent call last):
         ...
-    Exception: integer_validator() missing 1 required positional argument: 'value'
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
