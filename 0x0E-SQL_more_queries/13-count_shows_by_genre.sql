@@ -1,0 +1,2 @@
+-- List all genres in hbtn_0d_tvshows with the number of shows linked to each
+SELECT tv_genres.name AS genre, COUNT(*) AS number_of_shows FROM tv_show_genres LEFT JOIN tv_genres ON tv_show_genres.genre.id = tv_genres.id GROUP BY genre ORDER BY number_of_shows DESC;
