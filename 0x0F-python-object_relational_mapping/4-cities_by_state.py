@@ -11,7 +11,7 @@ if __name__ == "__main__":
                          passwd=argv[2], db=argv[3], charset="utf8")
     cur = db.cursor()
     cur.execute("SELECT cities.id, cities.name, states.name FROM cities " +
-                "JOIN states ON cities.state_id = state.id")
+                "JOIN states ON cities.state_id = states.id")
     query_r = cur.fetchall()
     for r in query_r:
         print(r)
