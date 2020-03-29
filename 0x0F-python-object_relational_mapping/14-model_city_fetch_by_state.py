@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Write a script that lists all City objects from the database hbtn_0e_14_usa
+Write a script that prints all City objects from the database hbtn_0e_14_usa
 """
 
 if __name__ == "__main__":
