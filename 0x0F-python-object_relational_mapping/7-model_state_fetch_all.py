@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Write a script that lists all State objects from the database hbtn+0e_6_usa
+Write a script that lists all State objects from the database hbtn_0e_6_usa
 """
 
 if __name__ == "__main__":
