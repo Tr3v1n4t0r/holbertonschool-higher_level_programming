@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 Write a script that takes in the name of a state as an argument and lists all
- cities of that state, using the database hbtn_0e_4_usa
+cities of that state, using the database hbtn_0e_4_usa
 """
 
 if __name__ == "__main__":
@@ -12,7 +12,7 @@ if __name__ == "__main__":
                          passwd=argv[2], db=argv[3], charset="utf8")
     cur = db.cursor()
     cur.execute("SELECT cities.name FROM cities JOIN states ON " +
-                "cities.state_id = state.id WHERE states.name = %s",
+                "cities.state_id = states.id WHERE states.name = %s",
                 (argv[4], ))
     query_r = cur.fetchall()
     print(", ".join(r[0] for r in query_r))
