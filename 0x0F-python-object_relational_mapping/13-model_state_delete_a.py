@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-Write a script that prints the State object "Louisiana" to the database
-hbtn_0e_6_usa
+Write a script that prints the State object with the name passed as an argument
+from the database hbtn_0e_6_usa
 """
 
 if __name__ == "__main__":
@@ -16,7 +16,7 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    states = session.query(State).filter(state.name.contains('a')).all()
+    states = session.query(State).filter(State.name.contains('a')).all()
     for bad in states:
         session.delete(bad)
     session.commit()
