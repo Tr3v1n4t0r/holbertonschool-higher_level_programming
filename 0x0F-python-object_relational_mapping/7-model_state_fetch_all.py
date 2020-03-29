@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """
-Write a script that list all State objects from the database hbtn+0e_6_usa
+Write a script that lists all State objects from the database hbtn+0e_6_usa
 """
 
-if __name__ = "__main__":
+if __name__ == "__main__":
     from sys import argv
     from model_state import Base, State
     from sqlalchemy.orm import sessionmaker
