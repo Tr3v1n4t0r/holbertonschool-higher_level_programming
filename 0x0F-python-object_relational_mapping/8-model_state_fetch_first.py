@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 """
 Write a script that prints the first State object from the database
-hbtn+0e_6_usa
+hbtn_0e_6_usa
 """
 
-if __name__ = "__main__":
+if __name__ == "__main__":
     from sys import argv
     from model_state import Base, State
     from sqlalchemy.orm import sessionmaker
