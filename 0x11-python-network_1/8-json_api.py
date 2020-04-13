@@ -9,10 +9,10 @@ if __name__ == '__main__':
     from sys import argv
 
     if len(argv) == 1:
-        a = ''
+        q = ''
     else:
-        a = argv[1]
-    r = requests.post('http://0.0.0.0:5000/search_user', data={'a': a})
+        q = argv[1]
+    r = requests.post('http://0.0.0.0:5000/search_user', data={'q': q})
     try:
         data = r.json()
         if data:
