@@ -1,0 +1,23 @@
+#!/usr/bin/python3
+"""
+Send a post request to http://0.0.0.0:5000/search_user with letter as a
+parameter
+"""
+
+if __name__ == '__main__':
+    import requests
+    from sys import argv
+
+    if len(argv) == 1:
+        a = ''
+    else:
+        a = argv[1]
+    r = requests.post('http://0.0.0.0:5000/search_user', data={'a': a})
+    try:
+        data = r.json()
+        if data:
+            print('[{}] {}'.format(data.get('id'), data.get('name')))
+        else:
+            print('No result')
+    except:
+        print('Not a valid JSON')
